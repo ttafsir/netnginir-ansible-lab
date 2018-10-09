@@ -1,8 +1,8 @@
-# vagrant-veos-netwrks
+# netnginir-ansible-lab
 Simple lab to get up-and-running quickly with Ansible in a local virtual environment geared towards network automation. The lab includes:
 
 - One Ubuntu VM configured as an Ansible control node
-- One virtual Arista device 
+- Two virtual Arista device 
 
 
 ## Instructions
@@ -54,7 +54,7 @@ git clone http://10.253.185.27/ttafsir/vagrant-veos-netwrks.git
 
 
 ### Vagrant Up!
-Change to the cloned directory, and bring up the lab devices. the login information for all of the devices in the lab is set to **vagrant/vagrant** 
+Change to the cloned directory, and bring up the lab devices. the login information for all of the devices in the lab is set to **vagrant/vagrant**. Note that only the control node and switch1 will be started by default. If you'd like to start switch2, you must run `vagrant up switch2`. Please note that each vEOS switch requires 2048 MB.
 
 ```
 cd vagrant-veos-netwrks
@@ -104,3 +104,14 @@ If you do not know which port ssh was forwarded to on your host, you can run `va
 vagrant port switch1
 ```
 
+### Ansible Demo
+If the lab environment was correctly provisioned, you should be able to connect to the control node and successfully run the demo playbook.
+
+```
+vagrant ssh ctrlnode1
+cd ansible
+ansible-playbook demo-playbook.yml
+```
+
+### Vagrant Halt & Vagrant Destroy
+Once you're done with the lab, you can run `vagrant halt` to stop the VMs. You can also remove the VMs completely by running `vagrant destroy`.

@@ -20,7 +20,7 @@ sudo chown vagrant.vagrant ./ansible/ansible.cfg
 
 # Add vEOS switch to /etc/host file for name resolution
 sudo echo '10.10.10.11 switch1' >> /etc/hosts
-sudo echo '10.10.10.12 switch2' >> /etc/hosts
+#sudo echo '10.10.10.12 switch2' >> /etc/hosts
 
 # Add basic vEOS switch to default inventory
 sudo echo '
@@ -37,6 +37,6 @@ switch1
 switch2
 ' >> /etc/ansible/hosts
 
-# Add basic vEOS switch to default inventory
-sed -i '/host_key_checking/s/^#//g' ansible.cfg
+# set host_key_checking = False
+sed -i '/host_key_checking/s/^#//g' ./ansible/ansible.cfg
 
