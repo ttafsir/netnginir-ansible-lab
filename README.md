@@ -2,7 +2,7 @@
 Simple lab to get up-and-running quickly with Ansible in a local virtual environment geared towards network automation. The lab includes:
 
 - One Ubuntu VM configured as an Ansible control node
-- Two virtual Arista device 
+- Two virtual Arista devices 
 
 
 ## Instructions
@@ -66,7 +66,7 @@ Connect to Ansible control node
 vagrant ssh ctrlnode1
 ```
 
-Test connectivity to vEOS switch
+Test connectivity to switch1
 ```
 vagrant@ubuntu-xenial:~$ ping switch1
 vagrant@ubuntu-xenial:~$ ssh vagrant@switch1 
