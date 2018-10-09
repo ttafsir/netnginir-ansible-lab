@@ -1,0 +1,12 @@
+---
+  - name: PLAY1 - demo playbook to connect to vEOS device
+    hosts: eos
+    tasks:
+      - name: retrieve EOS show version
+        eos_command:
+          commands:
+            - show version
+        register: show_ver
+
+      - name: print show version output
+        debug: var=show_ver.stdout_lines[0]
