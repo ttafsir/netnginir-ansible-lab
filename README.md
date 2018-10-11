@@ -49,7 +49,7 @@ vEOS-lab-4.20.1F (virtualbox, 0)
 The following step requires that you have [git](https://git-scm.com) installed.
 
 ```
-git clone http://10.253.185.27/ttafsir/vagrant-veos-netwrks.git
+git clone https://github.com/ttafsir/netnginir-ansible-lab.git
 ```
 
 
