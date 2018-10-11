@@ -9,7 +9,7 @@ sudo apt-get install git -y
 sudo apt-get install python-pip python-dev libffi-dev -y 
 sudo apt-get install lldpd -y
 
-sudo usermod -aG sudo vagrant
+sudo usermod -aG admin vagrant
 echo export PYTHONPATH="/usr/share/ansible" >>/home/vagrant/.profile
 
 # copy the ansible folder to the Ansible control node
@@ -20,7 +20,7 @@ sudo chown vagrant.vagrant ./ansible/ansible.cfg
 
 # Add vEOS switch to /etc/host file for name resolution
 sudo echo '10.10.10.11 switch1' >> /etc/hosts
-#sudo echo '10.10.10.12 switch2' >> /etc/hosts
+sudo echo '10.10.10.12 switch2' >> /etc/hosts
 
 # Add basic vEOS switch to default inventory
 sudo echo '
